@@ -2,6 +2,15 @@
 
 ############ 메모 앱 API 만들기 ############
 
+##### <<  설치한 라이브러리 확인 >> #####
+# lamda_app 가상환경
+# 파이썬버전 - 3.10
+
+# 설치 라이브러리 : 
+# flask , flask-restful, email-validator, 
+# psycopg2-binary, passlib, Flask-JWT-Extended
+##### --------------------------- #####
+
 
 # 라이브러리 임포트--------
 
