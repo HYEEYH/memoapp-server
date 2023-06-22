@@ -18,6 +18,7 @@ from flask import Flask
 from flask_restful import Api
 from flask_jwt_extended import JWTManager
 from config import Config
+
 from resources.follow import FollowResource
 from resources.memo import FollowMemoListResource, MemoListResource, MemoResource
 from resources.user import UserLoginResource, UserLogoutResource, UserRegisterResource, jwt_blocklist
@@ -60,13 +61,13 @@ def check_if_token_is_revoked(jwt_header, jwt_payload) :
 api = Api(app)
 
 # 경로와 API 동작코드(Resource)를 연결한다.
-# resource 폴더 만들기 - recipe.py 파일 만들기
+# resource 폴더 만들기 - memo.py 파일 만들기
 	              #   처리함수        ,  '경로'
 api.add_resource( MemoListResource , '/memo')
 # 		# 경로로 오는 것을 함수로 처리해라
 api.add_resource( MemoResource , '/memo/<int:memo_id>') # 메모 수정 삭제 API
-#         # memo/<int:recipe_id> 레시피스 뒤에 숫자 오면 처리해달라
-api.add_resource( UserRegisterResource  , '/user/register')
+#         # memo/<int:recipe_id> 뒤에 숫자 오면 처리해달라
+api.add_resource( UserRegisterResource  , '/user/register') # 회원가입 API
         # 회원가입 API
         # 클래스 이름을 이제 지어줘야 함.
         # 클래스이름에는 리소스라고 들어가야 다른사람들이 리소스를 상속받아
